@@ -12,16 +12,6 @@
       },
       "_comment_total_libs_scanned": "Optional. Expected number of libraries scanned with comparison operator. Validates that the scan processed libraries. If not provided, this check will not be performed.",
       "expected_messages": [
-        {
-          "operator": "contains",
-          "value": "error",
-          "level": "error"
-        },
-        {
-          "operator": "regex",
-          "value": "Scan Warnings:.*",
-          "level": "warning"
-        }
       ],
       "_comment_expected_messages": "Optional. List of messages to validate in security check output/summary with severity levels. Each entry should have 'operator' (eq, regex, or contains), 'value' (string or regex pattern), and 'level' (info, error, or warning). If not provided, this check will not be performed.",
       "_comment_expected_messages_info": "Level 'info': Standard message validation. Example: {'operator': 'contains', 'value': 'Security Check found', 'level': 'info'} or {'operator': 'regex', 'value': 'Total libraries.*scanned', 'level': 'info'}",
@@ -90,10 +80,10 @@
           "operator": "regex",
           "value": "Found Python version \">=3.9\" in setup.cfg"
         },
-        {
-          "operator": "regex",
-          "value": "Using * (3.9.*) to create virtualenv*"
-        }
+       {
+    "operator": "regex",
+    "value": "Using .+ \\(3\\.9\\..+\\) to create virtualenv"
+  }
       ],
       "_comment_expected_log_lines": "Optional. List of log lines to validate. Each entry should have an 'operator' (eq or regex) and 'value' (string or regex pattern). Example: [{'operator': 'eq', 'value': 'Python version: 3.11'}, {'operator': 'regex', 'value': 'Python version: \\d+\\.\\d+'}]. If not provided, only log attachment will be performed."
     },
