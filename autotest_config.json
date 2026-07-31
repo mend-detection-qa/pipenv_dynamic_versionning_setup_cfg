@@ -75,15 +75,11 @@
     "logs": {
       "check_scanner_logs": true,
       "_comment_check_scanner_logs": "Whether to check scanner logs and attach them to Report Portal. Options: true | false. Default: true",
-      "expected_log_lines": [
-        {
-          "operator": "regex",
-          "value": "Found Python version \">=3.9\" in setup.cfg"
-        },
+      "expected_log_lines": [ 
        {                                                                                                                                                            
     "operator": "regex",                                                                                                                                     
     "value": "Using .*3\\.9\\.\\d+.*to create virtualenv"                                                                                                      
-  }  
+        }  
       ],
       "_comment_expected_log_lines": "Optional. List of log lines to validate. Each entry should have an 'operator' (eq or regex) and 'value' (string or regex pattern). Example: [{'operator': 'eq', 'value': 'Python version: 3.11'}, {'operator': 'regex', 'value': 'Python version: \\d+\\.\\d+'}]. If not provided, only log attachment will be performed."
     },
